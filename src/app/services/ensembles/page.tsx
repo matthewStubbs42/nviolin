@@ -39,7 +39,7 @@ export default function Ensembles() {
       <section className="px-6 md:px-12 lg:px-24 py-16">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <p className="section-title">Duo</p>
+            <p className="section-title">Piano and Strings</p>
             <h2 className="text-2xl font-light mb-6" style={{ fontFamily: 'var(--font-dm-sans), sans-serif' }}>
               naomi+matt
             </h2>
@@ -64,15 +64,23 @@ export default function Ensembles() {
         </div>
       </section>
 
-      {/* County Strings Section */}
+      {/* SWAG Trio Section */}
+      <section className="px-6 md:px-12 lg:px-24 pt-0 pb-16">
+        <h2 className="text-2xl font-light mb-6" style={{ fontFamily: 'var(--font-dm-sans), sans-serif' }}>
+          SWAG Trio
+        </h2>
+        <p className="text-[#6B6B6B] leading-relaxed max-w-2xl">
+          A piano trio comprised of Matthew Stubbs, Amber Walton-Amar, and Naomi Garrett (Stubbs + Walton-Amar + Garrett = SWAG).
+          Founded in 2024, we are available for weddings and concerts of any size.
+        </p>
+      </section>
+
+      {/* String Ensembles Section */}
       <section className="px-6 md:px-12 lg:px-24 py-16 bg-white">
         <p className="section-title">String Ensembles</p>
-        <h2 className="text-2xl font-light mb-6" style={{ fontFamily: 'var(--font-dm-sans), sans-serif' }}>
-          County Strings
-        </h2>
         <p className="text-[#6B6B6B] leading-relaxed mb-10 max-w-2xl">
-          Founded by cellists Amber Walton-Amar and violinist Jenna Gallagher alongside Naomi,
-          County Strings provides flexible instrumentation options for your event.
+          In collaboration with my colleagues from County Strings, the County Chamber Collective and beyond,
+          I am able to provide flexible string instrumentations for your event.
         </p>
         <div className="grid md:grid-cols-2 gap-6 max-w-2xl">
           <div className="py-4 border-b border-[#E5E5E5]">
