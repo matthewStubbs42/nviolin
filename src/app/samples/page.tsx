@@ -69,13 +69,13 @@ export default function Samples() {
   };
 
   const popSelections = [
-    { title: "Latch", artist: "Sam Smith", performer: "naomi+matt", video: "https://media.naomiviolin.ca/videos/Latch.mp4", ref: latchVideoRef, customPlay: !latchStarted, onPlay: handleLatchPlay },
-    { title: "You and Me", artist: "Lifehouse", performer: "naomi+matt", video: "https://media.naomiviolin.ca/videos/You and Me.mp4", ref: youAndMeVideoRef, customPlay: !youAndMeStarted, onPlay: handleYouAndMePlay },
+    { title: "Latch", artist: "Sam Smith", performer: "naomi+matt", video: "https://media.naomiviolin.ca/videos/Latch.mp4", poster: "https://media.naomiviolin.ca/images/latch-poster.jpg", ref: latchVideoRef, customPlay: !latchStarted, onPlay: handleLatchPlay },
+    { title: "You and Me", artist: "Lifehouse", performer: "naomi+matt", video: "https://media.naomiviolin.ca/videos/You and Me.mp4", poster: "https://media.naomiviolin.ca/images/youandme-poster.jpg", ref: youAndMeVideoRef, customPlay: !youAndMeStarted, onPlay: handleYouAndMePlay },
   ];
 
   const classicalSelections = [
-    { title: "Canon in D", composer: "Johann Pachelbel", performer: "naomi+matt", video: "https://media.naomiviolin.ca/videos/Pachabel Canon in D.mp4", ref: canonVideoRef, customPlay: !canonStarted, onPlay: handleCanonPlay },
-    { title: "Jesu Joy of Man's Desiring", composer: "J.S. Bach", performer: "naomi+matt", video: "https://media.naomiviolin.ca/videos/Jesu Joy of Man_s Desiring.mp4", ref: jesuVideoRef, customPlay: !jesuStarted, onPlay: handleJesuPlay },
+    { title: "Canon in D", composer: "Johann Pachelbel", performer: "naomi+matt", video: "https://media.naomiviolin.ca/videos/Pachabel Canon in D.mp4", poster: "https://media.naomiviolin.ca/images/canon-poster.jpg", ref: canonVideoRef, customPlay: !canonStarted, onPlay: handleCanonPlay },
+    { title: "Jesu Joy of Man's Desiring", composer: "J.S. Bach", performer: "naomi+matt", video: "https://media.naomiviolin.ca/videos/Jesu Joy of Man_s Desiring.mp4", poster: "https://media.naomiviolin.ca/images/jesu-poster.jpg", ref: jesuVideoRef, customPlay: !jesuStarted, onPlay: handleJesuPlay },
   ];
 
   return (
@@ -108,6 +108,7 @@ export default function Samples() {
                   controls={!song.customPlay}
                   preload="metadata"
                   playsInline
+                  poster={song.poster}
                 >
                   <source src={`${song.video}#t=0.5`} type="video/mp4" />
                   Your browser does not support the video tag.
@@ -153,6 +154,7 @@ export default function Samples() {
                   controls={!piece.customPlay}
                   preload="metadata"
                   playsInline
+                  poster={piece.poster}
                 >
                   <source src={`${piece.video}#t=0.5`} type="video/mp4" />
                   Your browser does not support the video tag.
