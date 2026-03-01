@@ -9,7 +9,7 @@ export default function Ensembles() {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
             <Image
-              src="/images/naomi+matt photo 2.jpg"
+              src="https://media.naomiviolin.ca/images/naomi+matt photo 2.jpg"
               alt="Naomi and Matt performing together"
               fill
               className="object-cover"
@@ -55,7 +55,7 @@ export default function Ensembles() {
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
             <Image
-              src="/images/naomi+matt photo.jpg"
+              src="https://media.naomiviolin.ca/images/naomi+matt photo.jpg"
               alt="Naomi and Matt"
               fill
               className="object-cover"

@@ -40,6 +40,9 @@ yarn-error.log*
 /public/images/
 /public/videos/
 
+# wrangler
+.wrangler/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

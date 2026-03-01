@@ -9,7 +9,7 @@ export default function Lessons() {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="image-wrapper aspect-[3/4]">
             <Image
-              src="/images/Lessons 2.jpg"
+              src="https://media.naomiviolin.ca/images/Lessons 2.jpg"
               alt="Naomi Garrett teaching"
               fill
               className="object-cover object-[center_25%]"

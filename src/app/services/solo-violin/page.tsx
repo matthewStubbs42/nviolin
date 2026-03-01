@@ -9,7 +9,7 @@ export default function SoloViolin() {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="relative aspect-[3/4] overflow-hidden rounded-xl">
             <Image
-              src="/images/20250506-NaomiGarrett-Talent-10-Web.jpg"
+              src="https://media.naomiviolin.ca/images/20250506-NaomiGarrett-Talent-10-Web.jpg"
               alt="Naomi Garrett with violin"
               fill
               className="object-cover"

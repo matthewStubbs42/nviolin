@@ -10,7 +10,7 @@ export default function Home() {
           <div className="lg:w-1/2">
             <div className="image-wrapper aspect-[3/4] max-w-lg mx-auto lg:mx-0">
               <Image
-                src="/images/20250506-NaomiGarrett-Talent-01-Web.jpg"
+                src="https://media.naomiviolin.ca/images/20250506-NaomiGarrett-Talent-01-Web.jpg"
                 alt="Naomi Garrett with violin"
                 fill
                 className="object-cover object-top"
@@ -85,7 +85,7 @@ export default function Home() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div className="image-wrapper aspect-square">
             <Image
-              src="/images/20250506-NaomiGarrett-Talent-02-Web.jpg"
+              src="https://media.naomiviolin.ca/images/20250506-NaomiGarrett-Talent-02-Web.jpg"
               alt="Naomi Garrett"
               fill
               className="object-cover"
@@ -93,7 +93,7 @@ export default function Home() {
           </div>
           <div className="image-wrapper aspect-square">
             <Image
-              src="/images/20250506-NaomiGarrett-Talent-03-Web.jpg"
+              src="https://media.naomiviolin.ca/images/20250506-NaomiGarrett-Talent-03-Web.jpg"
               alt="Naomi Garrett"
               fill
               className="object-cover"
@@ -101,7 +101,7 @@ export default function Home() {
           </div>
           <div className="image-wrapper aspect-square">
             <Image
-              src="/images/20250506-NaomiGarrett-Talent-04-Web.jpg"
+              src="https://media.naomiviolin.ca/images/20250506-NaomiGarrett-Talent-04-Web.jpg"
               alt="Naomi Garrett"
               fill
               className="object-cover"
@@ -109,7 +109,7 @@ export default function Home() {
           </div>
           <div className="image-wrapper aspect-square">
             <Image
-              src="/images/20250506-NaomiGarrett-Talent-06-Web.jpg"
+              src="https://media.naomiviolin.ca/images/20250506-NaomiGarrett-Talent-06-Web.jpg"
               alt="Naomi Garrett"
               fill
               className="object-cover"

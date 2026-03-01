@@ -69,13 +69,13 @@ export default function Samples() {
   };
 
   const popSelections = [
-    { title: "Latch", artist: "Sam Smith", performer: "naomi+matt", video: "/videos/Latch.mp4", ref: latchVideoRef, customPlay: !latchStarted, onPlay: handleLatchPlay },
-    { title: "You and Me", artist: "Lifehouse", performer: "naomi+matt", video: "/videos/You and Me.mp4", ref: youAndMeVideoRef, customPlay: !youAndMeStarted, onPlay: handleYouAndMePlay },
+    { title: "Latch", artist: "Sam Smith", performer: "naomi+matt", video: "https://media.naomiviolin.ca/videos/Latch.mp4", ref: latchVideoRef, customPlay: !latchStarted, onPlay: handleLatchPlay },
+    { title: "You and Me", artist: "Lifehouse", performer: "naomi+matt", video: "https://media.naomiviolin.ca/videos/You and Me.mp4", ref: youAndMeVideoRef, customPlay: !youAndMeStarted, onPlay: handleYouAndMePlay },
   ];
 
   const classicalSelections = [
-    { title: "Canon in D", composer: "Johann Pachelbel", performer: "naomi+matt", video: "/videos/Pachabel Canon in D.mp4", ref: canonVideoRef, customPlay: !canonStarted, onPlay: handleCanonPlay },
-    { title: "Jesu Joy of Man's Desiring", composer: "J.S. Bach", performer: "naomi+matt", video: "/videos/Jesu Joy of Man_s Desiring.mp4", ref: jesuVideoRef, customPlay: !jesuStarted, onPlay: handleJesuPlay },
+    { title: "Canon in D", composer: "Johann Pachelbel", performer: "naomi+matt", video: "https://media.naomiviolin.ca/videos/Pachabel Canon in D.mp4", ref: canonVideoRef, customPlay: !canonStarted, onPlay: handleCanonPlay },
+    { title: "Jesu Joy of Man's Desiring", composer: "J.S. Bach", performer: "naomi+matt", video: "https://media.naomiviolin.ca/videos/Jesu Joy of Man_s Desiring.mp4", ref: jesuVideoRef, customPlay: !jesuStarted, onPlay: handleJesuPlay },
   ];
 
   return (

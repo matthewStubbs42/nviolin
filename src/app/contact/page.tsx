@@ -45,7 +45,7 @@ export default function Contact() {
           <div>
             <div className="image-wrapper aspect-[4/3] mb-10">
               <Image
-                src="/images/20250506-NaomiGarrett-Talent-11-Web.jpg"
+                src="https://media.naomiviolin.ca/images/20250506-NaomiGarrett-Talent-11-Web.jpg"
                 alt="Naomi Garrett"
                 fill
                 className="object-cover"

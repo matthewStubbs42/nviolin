@@ -8,7 +8,7 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="relative aspect-[3/4] overflow-hidden rounded-xl">
             <Image
-              src="/images/20250506-NaomiGarrett-Talent-05-Web.jpg"
+              src="https://media.naomiviolin.ca/images/20250506-NaomiGarrett-Talent-05-Web.jpg"
               alt="Naomi Garrett portrait"
               fill
               className="object-cover"
@@ -119,7 +119,7 @@ export default function About() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div className="relative aspect-square overflow-hidden rounded-xl">
             <Image
-              src="/images/20250506-NaomiGarrett-Talent-02-Web.jpg"
+              src="https://media.naomiviolin.ca/images/20250506-NaomiGarrett-Talent-02-Web.jpg"
               alt="Naomi Garrett"
               fill
               className="object-cover hover:scale-105 transition-transform duration-500"
@@ -127,7 +127,7 @@ export default function About() {
           </div>
           <div className="relative aspect-square overflow-hidden rounded-xl">
             <Image
-              src="/images/20250506-NaomiGarrett-Talent-03-Web.jpg"
+              src="https://media.naomiviolin.ca/images/20250506-NaomiGarrett-Talent-03-Web.jpg"
               alt="Naomi Garrett"
               fill
               className="object-cover hover:scale-105 transition-transform duration-500"
@@ -135,7 +135,7 @@ export default function About() {
           </div>
           <div className="relative aspect-square overflow-hidden rounded-xl">
             <Image
-              src="/images/20250506-NaomiGarrett-Talent-04-Web.jpg"
+              src="https://media.naomiviolin.ca/images/20250506-NaomiGarrett-Talent-04-Web.jpg"
               alt="Naomi Garrett"
               fill
               className="object-cover hover:scale-105 transition-transform duration-500"
@@ -143,7 +143,7 @@ export default function About() {
           </div>
           <div className="relative aspect-square overflow-hidden rounded-xl">
             <Image
-              src="/images/20250506-NaomiGarrett-Talent-06-Web.jpg"
+              src="https://media.naomiviolin.ca/images/20250506-NaomiGarrett-Talent-06-Web.jpg"
               alt="Naomi Garrett"
               fill
               className="object-cover hover:scale-105 transition-transform duration-500"
