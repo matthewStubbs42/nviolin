@@ -7,8 +7,8 @@ export default function Home() {
       {/* Hero Section */}
       <section className="px-6 md:px-12 lg:px-24 py-16 md:py-24">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-          <div className="lg:w-1/2">
-            <div className="image-wrapper aspect-[3/4] max-w-lg mx-auto lg:mx-0">
+          <div className="w-full lg:w-1/2">
+            <div className="image-wrapper aspect-[3/4] w-full max-w-lg mx-auto lg:mx-0">
               <Image
                 src="https://media.naomiviolin.ca/images/20250506-NaomiGarrett-Talent-01-Web.jpg"
                 alt="Naomi Garrett with violin"
