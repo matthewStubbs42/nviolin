@@ -1,7 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 export default function Samples() {
   const latchVideoRef = useRef<HTMLVideoElement>(null);
@@ -12,25 +13,6 @@ export default function Samples() {
   const [youAndMeStarted, setYouAndMeStarted] = useState(false);
   const [canonStarted, setCanonStarted] = useState(false);
   const [jesuStarted, setJesuStarted] = useState(false);
-
-  useEffect(() => {
-    const latchVideo = latchVideoRef.current;
-    if (latchVideo) {
-      latchVideo.currentTime = 52;
-    }
-    const youAndMeVideo = youAndMeVideoRef.current;
-    if (youAndMeVideo) {
-      youAndMeVideo.currentTime = 96;
-    }
-    const canonVideo = canonVideoRef.current;
-    if (canonVideo) {
-      canonVideo.currentTime = 100;
-    }
-    const jesuVideo = jesuVideoRef.current;
-    if (jesuVideo) {
-      jesuVideo.currentTime = 27;
-    }
-  }, []);
 
   const handleLatchPlay = () => {
     const video = latchVideoRef.current;
@@ -69,13 +51,13 @@ export default function Samples() {
   };
 
   const popSelections = [
-    { title: "Latch", artist: "Sam Smith", performer: "naomi+matt", video: "https://media.naomiviolin.ca/videos/Latch.mp4", poster: "https://media.naomiviolin.ca/images/latch-poster.jpg", ref: latchVideoRef, customPlay: !latchStarted, onPlay: handleLatchPlay },
-    { title: "You and Me", artist: "Lifehouse", performer: "naomi+matt", video: "https://media.naomiviolin.ca/videos/You and Me.mp4", poster: "https://media.naomiviolin.ca/images/youandme-poster.jpg", ref: youAndMeVideoRef, customPlay: !youAndMeStarted, onPlay: handleYouAndMePlay },
+    { title: "Latch", artist: "Sam Smith", performer: "naomi+matt", video: "https://media.naomiviolin.ca/videos/Latch.mp4", poster: "https://media.naomiviolin.ca/images/latch-poster.jpg", ref: latchVideoRef, started: latchStarted, onPlay: handleLatchPlay },
+    { title: "You and Me", artist: "Lifehouse", performer: "naomi+matt", video: "https://media.naomiviolin.ca/videos/You and Me.mp4", poster: "https://media.naomiviolin.ca/images/youandme-poster.jpg", ref: youAndMeVideoRef, started: youAndMeStarted, onPlay: handleYouAndMePlay },
   ];
 
   const classicalSelections = [
-    { title: "Canon in D", composer: "Johann Pachelbel", performer: "naomi+matt", video: "https://media.naomiviolin.ca/videos/Pachabel Canon in D.mp4", poster: "https://media.naomiviolin.ca/images/canon-poster.jpg", ref: canonVideoRef, customPlay: !canonStarted, onPlay: handleCanonPlay },
-    { title: "Jesu Joy of Man's Desiring", composer: "J.S. Bach", performer: "naomi+matt", video: "https://media.naomiviolin.ca/videos/Jesu Joy of Man_s Desiring.mp4", poster: "https://media.naomiviolin.ca/images/jesu-poster.jpg", ref: jesuVideoRef, customPlay: !jesuStarted, onPlay: handleJesuPlay },
+    { title: "Canon in D", composer: "Johann Pachelbel", performer: "naomi+matt", video: "https://media.naomiviolin.ca/videos/Pachabel Canon in D.mp4", poster: "https://media.naomiviolin.ca/images/canon-poster.jpg", ref: canonVideoRef, started: canonStarted, onPlay: handleCanonPlay },
+    { title: "Jesu Joy of Man's Desiring", composer: "J.S. Bach", performer: "naomi+matt", video: "https://media.naomiviolin.ca/videos/Jesu Joy of Man_s Desiring.mp4", poster: "https://media.naomiviolin.ca/images/jesu-poster.jpg", ref: jesuVideoRef, started: jesuStarted, onPlay: handleJesuPlay },
   ];
 
   return (
@@ -102,28 +84,44 @@ export default function Samples() {
           {popSelections.map((song, index) => (
             <div key={index} className="card overflow-hidden !p-0">
               <div className="aspect-video bg-[#F5EBE6] relative">
-                <video
-                  ref={song.ref}
-                  className="w-full h-full object-cover"
-                  controls={!song.customPlay}
-                  preload="metadata"
-                  playsInline
-                  poster={song.poster}
-                >
-                  <source src={`${song.video}#t=0.5`} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-                {song.customPlay && (
-                  <button
-                    onClick={song.onPlay}
-                    className="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/30 transition-colors cursor-pointer"
+                {!song.started ? (
+                  <>
+                    <Image
+                      src={song.poster}
+                      alt={`${song.title} thumbnail`}
+                      fill
+                      className="object-cover"
+                    />
+                    <button
+                      onClick={song.onPlay}
+                      className="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/30 transition-colors cursor-pointer"
+                    >
+                      <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-lg hover:scale-105 transition-transform">
+                        <svg className="w-6 h-6 text-[#C17B6E] ml-1" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+                    </button>
+                    <video
+                      ref={song.ref}
+                      className="hidden"
+                      preload="none"
+                      playsInline
+                    >
+                      <source src={song.video} type="video/mp4" />
+                    </video>
+                  </>
+                ) : (
+                  <video
+                    ref={song.ref}
+                    className="w-full h-full object-cover"
+                    controls
+                    playsInline
+                    autoPlay
                   >
-                    <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-lg hover:scale-105 transition-transform">
-                      <svg className="w-6 h-6 text-[#C17B6E] ml-1" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </div>
-                  </button>
+                    <source src={song.video} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 )}
               </div>
               <div className="p-6 flex items-center justify-between">
@@ -148,28 +146,44 @@ export default function Samples() {
           {classicalSelections.map((piece, index) => (
             <div key={index} className="card overflow-hidden !p-0">
               <div className="aspect-video bg-[#F5EBE6] relative">
-                <video
-                  ref={piece.ref}
-                  className="w-full h-full object-cover"
-                  controls={!piece.customPlay}
-                  preload="metadata"
-                  playsInline
-                  poster={piece.poster}
-                >
-                  <source src={`${piece.video}#t=0.5`} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-                {piece.customPlay && (
-                  <button
-                    onClick={piece.onPlay}
-                    className="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/30 transition-colors cursor-pointer"
+                {!piece.started ? (
+                  <>
+                    <Image
+                      src={piece.poster}
+                      alt={`${piece.title} thumbnail`}
+                      fill
+                      className="object-cover"
+                    />
+                    <button
+                      onClick={piece.onPlay}
+                      className="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/30 transition-colors cursor-pointer"
+                    >
+                      <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-lg hover:scale-105 transition-transform">
+                        <svg className="w-6 h-6 text-[#C17B6E] ml-1" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+                    </button>
+                    <video
+                      ref={piece.ref}
+                      className="hidden"
+                      preload="none"
+                      playsInline
+                    >
+                      <source src={piece.video} type="video/mp4" />
+                    </video>
+                  </>
+                ) : (
+                  <video
+                    ref={piece.ref}
+                    className="w-full h-full object-cover"
+                    controls
+                    playsInline
+                    autoPlay
                   >
-                    <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-lg hover:scale-105 transition-transform">
-                      <svg className="w-6 h-6 text-[#C17B6E] ml-1" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </div>
-                  </button>
+                    <source src={piece.video} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 )}
               </div>
               <div className="p-6 flex items-center justify-between">
